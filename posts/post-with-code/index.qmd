@@ -1,6 +1,6 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
+author: "Urvi Sharma"
 date: "2025-07-16"
 categories: [news, code, analysis]
 image: "image.jpg"

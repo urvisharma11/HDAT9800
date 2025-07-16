@@ -1,6 +1,6 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+author: "Urvi Sharma"
 date: "2025-07-13"
 categories: [news]
 ---
