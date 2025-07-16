@@ -21,16 +21,7 @@ head(flights)
 glimpse(flights)
 ```
 
- ```{r}
-
-library(dplyr)
-
-library(ggplot2)
-library(nycflights13)
-dim(flights)
-head(flights)
-glimpse(flights)
-```
+ 
 
 ```{r}
 filter(flights, month == 1, day == 1) # For rows
