@@ -58,3 +58,33 @@ delay <- summarise(by_tailnum,
                    dist = mean(distance, na.rm = TRUE),
                    delay = mean(arr_delay, na.rm = TRUE))
 delay <- filter(delay, count > 20, dist < 2000)
+```
+
+```{r}
+ggplot(delay, aes(dist,delay))+
+  geom_point(aes(size=count), alpha = 1/2)+ #size = count: the size of each point is based on the number of flights (so busier aircraft show up larger).
+#alpha = 1/2: makes the points semi-transparent so overlaps are easier to see.
+  geom_smooth()+ scale_size_area() #Scales the area of the bubbles directly based on the data values — not the radius.
+```
+
+```{r}
+# Finding the number of planes and flights going to each possible destination.
+destinations <- group_by(flights, dest)
+summarise(destinations,
+          planes = n_distinct(tailnum),
+          flights = n())
+```
+
+```{r}
+# Chaining
+flights %>%
+  group_by(year,month,day) %>%
+  select(arr_delay, dep_delay) %>%
+  summarise(
+    arr = mean(arr_delay, na.rm = TRUE),
+    dep = mean(dep_delay, na.rm = TRUE) 
+  ) %>%
+  filter(arr > 30 | dep > 30)
+  
+```
+
